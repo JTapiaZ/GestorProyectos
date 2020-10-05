@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="resources/iconos/logo.ico">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilosForm.css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css">
+    <script type="text/javascript" src="sweetalert/sweetalert2.min.js" ></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <title>Cliente Externo - persona natural</title>
+</head>
+
+<body>
+    <div class="containerGen">
+        <section class="secForm">
+            <div class="container">
+                <h2 class="titulo1">Soy Cliente externo Persona Natural</h2>
+                    <div class="contInputs">
+                        <label class="label" for="">
+                                Nombre completo
+                            </label>
+                        <input type="text" id="nombre" onkeydown="prevent()" placeholder="Nombre completo">
+                    </div>
+                    <div class="contInputs">
+                        <label class="label" for="">
+                                Cédula
+                            </label>
+                        <input type="text" id="cedula" onkeydown="prevent()" placeholder="Número de cedula">
+                    </div>
+                    <div class="contInputs">
+                        <label class="label" for="">
+                                Ciudad
+                            </label>
+                        <input type="text" id="ciudad" onkeydown="prevent()" placeholder="Ciudad">
+                    </div>
+                    <div class="contInputs">
+                        <label class="label" for="">
+                                Número de contacto
+                            </label>
+                        <input type="text" id="contacto" onkeydown="prevent()" placeholder="Número telefónico de contacto">
+                    </div>
+                    <div class="contInputs">
+                        <label class="label" for="">
+                                Correo electrónico
+                            </label>
+                        <input type="text" id="email" onkeydown="prevent()" placeholder="Dirección de correo electrónico">
+                    </div>
+                    <div class="contInputs">
+                        <label class="label" for="">
+                                Nombre del proyecto
+                            </label>
+                        <input type="text" id="nomProyecto" onkeydown="prevent()" placeholder="Nombre del proyecto">
+                    </div>
+                    <div class="contInputs">
+                        <label class="label" for="">
+                                Decripción detallada del proyecto
+                            </label>
+                        <textarea name="" id="descProyecto" onkeydown="prevent()" cols="30" rows="10" placeholder="Describa ampliamente y en detalle el requerimiento considerando los aspectos relevantes" style="font-family: 'Poppins', sans-serif;"></textarea>
+                    </div>
+                    <div class="contInputs">
+                        <label class="label" for="">
+                                Tiempo esperado
+                            </label>
+                        <input type="text" id="tiempoEsperado" onkeydown="prevent()" placeholder="Estimado de tiempo para finalizar el proyecto">
+                    </div>
+                    <div class="g-recaptcha" data-sitekey="6LckpskZAAAAAO4oijyCSiTsBA7R0kJpp9JcJ9nA"></div>
+                    <div class="contBtn">
+                        <button id="button1" type="submit" class="btn">Enviar</button>
+                    </div>
+                    <div class="w3-container">
+                        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Subir un Archivo de avance</button>
+                        <div id="id01" class="w3-modal">
+                          <div class="w3-modal-content" style="height: 500px;">
+                            <div class="w3-container">
+                              <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                              <iframe width="100px" height="100px" name="dummyframe" id="dummyframe"></iframe>
+                                <div style="width: 10%; margin-left: auto; margin-right: auto;">
+                                    <img src="./resources/img/logo.png" style="width: 100%;" />
+                                </div><br/>    
+                                <form id="upload_form" enctype="multipart/form-data" method="POST"> 
+                                    <h3>Debes subir un archivo de avance</h3>  
+                                    <input type="file" name="gdp" id="gdp" onchange="uploadFile()" required/> <br> 
+                                </form> 
+                              </div>
+                              <div style="width: min-content; margin-left: auto; margin-right: auto;">
+							  <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+                              <h3 id="status"></h3>
+                            </div>
+							  <!-- <p id="loaded_n_total"></p> -->
+                            </div>
+                          </div>
+                        </div>  
+            </div>
+        </section>
+
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#button1").click(async function(){
+            var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            var response = grecaptcha.getResponse();
+            var name = document.getElementById("nombre").value;
+            var iDocument = document.getElementById("cedula").value;
+            var city = document.getElementById("ciudad").value;
+            var phone = document.getElementById("contacto").value;
+            var email = document.getElementById("email").value;
+            var nameProyect = document.getElementById("nomProyecto").value;
+            var description = document.getElementById("descProyecto").value;
+            var deadline = document.getElementById("tiempoEsperado").value;
+            if (regex.test(email) == false) {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes ingresar una direccion de correo electronico valida!",
+                timer: 10500
+            })
+            return (false);
+        } else if (name.length < 8) {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes ingresar tu nombre completo!",
+                timer: 10500
+            })
+            return (false);
+        } else if (iDocument.length < 8) {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes ingresar un numero de documento valido!",
+                timer: 10500
+            })
+            return (false);
+        } else if (city.length < 7) {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes ingresar el nombre de la ciudad completo!",
+                timer: 10500
+            })
+            return (false);
+        } else if (phone.length < 7) {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes ingresar un numero de telefono completo!",
+                timer: 10500
+            })
+            return (false);
+        } else if (nameProyect.length < 7) {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes ingresar un nombre de proyecto valido!",
+                timer: 10500
+            })
+            return (false);
+        } else if (description.length < 7) {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes ingresar una descripcion de tu solicitud!",
+                timer: 10500
+            })
+            return (false);
+        } else if (deadline.length < 7) {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes ingresar una fecha limite de tu solicitud!",
+                timer: 10500
+            })
+            return (false);
+        } else {
+            if(response.length == 0){
+                Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes verificar que no eres un robot!",
+                timer: 10500
+            })
+            } else {
+                await fetch('http://gedp.aplicaciones-csge.com/api/natural/create', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name,
+                        iDocument,
+                        city,
+                        phone,
+                        email,
+                        nameProyect,
+                        description,
+                        deadline
+                    })
+                })
+                .then(function (result) {
+                    if (result['ok'] === true) {
+                        result.text().then(function (data) {
+                            swal({
+                                title:'¡Bien!',
+                                text:"Gracias por registrarse, pronto nos pondremos en contacto con usted.",
+                                type:'success'
+                            })
+                            // setTimeout(() => {
+                            //     window.location.reload();
+                            // }, 4000);
+                        })
+                    } else {
+                        result.text().then(function (data) {
+                            swal({
+                                type: 'error',
+                                title: '¡ERROR!',
+                                text: data,
+                                timer: 10500
+                            })
+                        })
+                    }
+
+                })
+                .catch(function (error) {
+                    console.log(error)
+                    swal({
+                        type: 'error',
+                        title: '¡ERROR!',
+                        text: error,
+                        timer: 10500
+                    })
+                })
+            }}
+            })
+        })
+
+        function _(el) {
+  			return document.getElementById(el);
+		}
+
+		function uploadFile() {
+		  var file = _("gdp").files[0];
+		  // alert(file.name+" | "+file.size+" | "+file.type);
+		  var formdata = new FormData();
+		  formdata.append("gdp", file);
+		  var ajax = new XMLHttpRequest();
+		  ajax.upload.addEventListener("progress", progressHandler, false);
+		  ajax.addEventListener("load", completeHandler, false);
+		  ajax.addEventListener("error", errorHandler, false);
+		  ajax.addEventListener("abort", abortHandler, false);
+		  ajax.open("POST", "http://gedp.aplicaciones-csge.com/api/natural/uploadProfilePicture"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+		  //use file_upload_parser.php from above url
+		  ajax.send(formdata);
+		}
+
+		function progressHandler(event) {
+		//   _("loaded_n_total").innerHTML = "Subiendo " + event.loaded + " bytes de " + event.total;
+		  var percent = (event.loaded / event.total) * 100;
+		  _("progressBar").value = Math.round(percent);
+		  _("status").innerHTML = Math.round(percent) + "% Subiendo... Por favor espere!";
+		}
+
+		function completeHandler(event) {
+		  _("status").innerHTML = event.target.responseText;
+		  _("progressBar").value = 0; //wil clear progress bar after successful upload
+		}
+
+		function errorHandler(event) {
+		  _("status").innerHTML = "¡La subida de archivos Fallo!";
+		}
+
+		function abortHandler(event) {
+		  _("status").innerHTML = "¡Subida de archivos abortada!";
+        }
+        
+        function prevent() {
+            var name = document.getElementById("nombre").value;
+            var iDocument = document.getElementById("cedula").value;
+            var city = document.getElementById("ciudad").value;
+            var phone = document.getElementById("contacto").value;
+            var email = document.getElementById("email").value;
+            var nameProyect = document.getElementById("nomProyecto").value;
+            var description = document.getElementById("descProyecto").value;
+            var deadline = document.getElementById("tiempoEsperado").value;
+        document.querySelector("#cedula").addEventListener("keypress", function (evt) {
+            if (evt.which !== 8 && evt.which !== 0 && evt.which < 48 || evt.which > 57) {
+                evt.preventDefault();
+            }
+        });
+        var CED = document.querySelector('#cedula');
+        CED.addEventListener('input', function () {
+            if (this.value.length > 10)
+                this.value = this.value.slice(0, 10);
+        })
+        document.querySelector("#contacto").addEventListener("keypress", function (evt) {
+            if (evt.which !== 8 && evt.which !== 0 && evt.which < 48 || evt.which > 57) {
+                evt.preventDefault();
+            }
+        });
+        var NTEL = document.querySelector('#contacto');
+        NTEL.addEventListener('input', function () {
+            if (this.value.length > 10)
+                this.value = this.value.slice(0, 10);
+        })
+        document.querySelector("#nombre").addEventListener("keypress", function (evt) {
+            if (!(evt.which >= 65 && evt.which <= 122) && (evt.which !== 32 && evt.which !== 0) && !(evt.which === 241)) {
+                evt.preventDefault();
+            }
+        });
+        document.querySelector("#ciudad").addEventListener("keypress", function (evt) {
+            if (!(evt.which >= 65 && evt.which <= 122) && (evt.which !== 32 && evt.which !== 0) && !(evt.which === 241)) {
+                evt.preventDefault();
+            }
+        });
+    }
+    </script>
+
+</body>
+
+</html>

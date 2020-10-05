@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="resources/iconos/logo.ico">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css">
+    <script type="text/javascript" src="sweetalert/sweetalert2.min.js" ></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <title>Plataforma de Soluciones SENA</title>
+</head>
+
+<body>
+    <div class="containerGen">
+        <nav class="nav">
+            <div class="contIzq">
+                <div class="logo">
+                    <img src="resources/img/LogoSena.png" alt="">
+                </div>
+                <div class="nombSitio">
+                    <h1>Gestión de Proyectos</h1>
+                </div>
+            </div>
+            <div class="contDer">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#asesoria">Asesorate</a></li>
+                    <li><a href="#acerca_de">Acerca de</a></li>
+                    <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Sección 1 -->
+        <section class="sec1" id='inicio'>
+            <div class="welcome">
+                <h2>Lorem ipsum</h2>
+                <div class="info">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, provident suscipit quasi blanditiis, molestias consequuntur voluptas voluptates dignissimos fugit quia nobis atque at, exercitationem incidunt eos debitis. Accusamus, autem iure!
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Sección 2 -->
+        <section class="sec2" id="asesoria">
+            <div class="contAsesoria">
+                <h2 class="titulo2">Asesorate con nosotros</h2>
+                <p>
+                    Si tienes un poryecto que quieras desarrollar o continuar desarrollando, cuentanos qué tipo de cliente eres y diligencia toda la información correspondiente. En cuanto nos envíes tu solicitud te asesoraremos para empezar o cuntinuar de inmediato con tu
+                    proyecto.
+                </p>
+            </div>
+            <div class="contTipoCliente">
+                <div class="btnCliente">
+                    <a href="formSena.html">
+                        <div class="btnIcon">
+                            <img src="resources/iconos/LogoSena.png" width="150" height="150" alt="">
+                        </div>
+                        <h3>Cliente SENA</h3>
+                    </a>
+                </div>
+                <div class="btnCliente">
+                    <a href="formEmpresa.html">
+                        <div class="btnIcon">
+                            <img src="resources/iconos/companyWhite.png" width="150" height="150" alt="">
+                        </div>
+                        <h3>Cliente Empresa</h3>
+                    </a>
+                </div>
+                <div class="btnCliente">
+                    <a href="formNatural.html">
+                        <div class="btnIcon">
+                            <img src="resources/iconos/personWhite.png" width="150" height="150" alt="">
+                        </div>
+                        <h3>Cliente Persona Natural</h3>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+        <!-- Sección 3 -->
+        <section class="sec3" id="acerca_de">
+            <h2 class="titulo1">Acerca de nosotros</h2>
+            <div class="contItems">
+                <div class="item">
+                    <div class="headItem">
+                        <img src="resources/iconos/Contdigital.png" alt="iconoContenidoDigital">
+                        <h3>Contenido digital</h3>
+                    </div>
+                    <div class="itemInfo">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure enim nemo, cumque ab velit quia. Non tempore consequuntur quo. Dolores fugiat repudiandae doloremque alias deserunt repellat a non perspiciatis voluptates!
+
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="headItem">
+                        <img src="resources/iconos/Fsoftware.png" alt="iconoFabricaSoftware">
+                        <h3>Fábrica de software</h3>
+                    </div>
+                    <div class="itemInfo">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure enim nemo, cumque ab velit quia. Non tempore consequuntur quo. Dolores fugiat repudiandae doloremque alias deserunt repellat a non perspiciatis voluptates!
+
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="headItem">
+                        <img src="resources/iconos/Testing.png" alt="iconoTesting">
+                        <h3>Testing</h3>
+                    </div>
+                    <div class="itemInfo">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure enim nemo, cumque ab velit quia. Non tempore consequuntur quo. Dolores fugiat repudiandae doloremque alias deserunt repellat a non perspiciatis voluptates!
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección 4 -->
+        <section class="sec4" id="portafolio">
+            <h2 class="titulo2">Nuestro portafolio</h2>
+            <div class="contentCards">
+                <div class="card">
+                    <div class="cardPreview">
+                        <img src="resources/img/senamecuida.png" alt="">
+                    </div>
+                    <div class="filtro"></div>
+                    <div class="cardInfo">
+                        <a href="http://senamecuida.sertec-csge.com.co/">
+                        <h4>Sena Me Cuida</h4>
+                        </a>  
+                        <p>Aplicativo de registro de prevención ante el covid 19.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardPreview">
+                        <img src="resources/img/sra.png" alt="">
+                    </div>
+                    <div class="filtro"></div>
+                    <div class="cardInfo">
+                        <a href="http://senamecuida.sertec-csge.com.co/">
+                            <h4>Software de Registro Academico</h4>
+                        </a>  
+                        <p>Aplicativo para el control Sena en su modalidad virtual.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardPreview">
+                        <img src="resources/img/netconsult.png" alt="">
+                    </div>
+                    <div class="filtro"></div>
+                    <div class="cardInfo">
+                        <h4>Nombre del proyecto</h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardPreview">
+                        <img src="resources/img/netconsult.png" alt="">
+                    </div>
+                    <div class="filtro"></div>
+                    <div class="cardInfo">
+                        <h4>Nombre del proyecto</h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Sección 5 -->
+        <section class="sec5" id="contacto">
+            <div class="contacto">
+                <h2 class="titulo1">Contacto</h2>
+                <p>Envianos tus datos y nos pondremos en contacto lo mas pronto posible.</p>
+                <div class="iconos">
+                    <a href="">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contForm">
+                <h2 class="titulo1">Contáctanos</h2>
+                <div>
+                    <div class="contInputs">
+                        <label class="label" for="">
+                            Nombre Completo y Apellidos
+                        </label>
+                        <input type="text" id="nombre">
+                    </div>
+                    <div class="contInputs">
+                        <label class="label" for="">
+                            Email 
+                        </label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="contInputs">
+                        <label class="label" for="">
+                            Celular
+                        </label>
+                        <input type="text" id="celular" onkeydown="prevent()">
+                    </div>
+                    <div class="contInputs">
+                        <label class="label" for="">
+                            ¿A quien deseas contactar?
+                        </label>
+                        <select name="" id="deseaContactar">
+                            <option value=""></option> 
+                            <option value="Contenido Digital">Contenido Digital</option> 
+                            <option value="Fabrica de Software">Fabrica de Software</option> 
+                            <option value="value1">Testing</option> 
+                        </select>
+                    </div>
+                    <div class="contInputs">
+                        <label class="label" for="">
+                            Escribe una pequeña descripción de lo que necesitas
+                        </label>
+                        <textarea name="" id="descripcion" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="g-recaptcha" data-sitekey="6LckpskZAAAAAO4oijyCSiTsBA7R0kJpp9JcJ9nA"></div>
+                    <div class="contBtn">
+                        <button id="enviar" class="btn">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <h4>©Todos los derechos reservados</h4>
+        </footer>
+    </div>
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#enviar").click(async function(){
+            var response = grecaptcha.getResponse();
+            var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            var name = document.getElementById("nombre").value;
+            var email = document.getElementById("email").value;
+            var celular = document.getElementById("celular").value;
+            var deseaContactar = document.getElementById("deseaContactar").value;
+            var description = document.getElementById("descripcion").value;
+            if (regex.test(email) == false) {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes ingresar una direccion de correo electronico valida!",
+                timer: 10500
+            })
+            return (false);
+        } else if (name.length < 8) {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes ingresar tu nombre completo!",
+                timer: 10500
+            })
+            return (false);
+        } else if (celular.length < 10) {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes ingresar un numero de celular valido!",
+                timer: 10500
+            })
+            return (false);
+        } else if (deseaContactar.length < 7) {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes ingresar a quien deseas contactar!",
+                timer: 10500
+            })
+            return (false);
+        } else if (description.length < 7) {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes ingresar una descripcion de tu solicitud!",
+                timer: 10500
+            })
+            return (false);
+        } else {
+            if(response.length == 0){
+                Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: "¡Debes verificar que no eres un robot!",
+                timer: 10500
+            })
+            } else {
+                await fetch('http://localhost:3008/api/contact/create', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    celular,
+                    deseaContactar,
+                    description
+                })
+            })
+            .then(function (result) {
+                if (result['ok'] === true) {
+                    result.text().then(function (data) {
+                        swal({
+                            title:'¡Bien!',
+                            text:"Gracias por registrarse, pronto nos pondremos en contacto con usted.",
+                            type:'success'
+                        })
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 4000);
+                    })
+                } else {
+                    result.text().then(function (data) {
+                        swal({
+                            type: 'error',
+                            title: '¡ERROR!',
+                            text: data,
+                            timer: 10500
+                        })
+                    })
+                }
+
+            })
+            .catch(function (error) {
+                console.log(error)
+                swal({
+                    type: 'error',
+                    title: '¡ERROR!',
+                    text: data,
+                    timer: 10500
+                })
+            })
+            }
+            
+        }
+        })
+    })
+
+    function prevent() {
+        document.querySelector("#celular").addEventListener("keypress", function (evt) {
+            if (evt.which !== 8 && evt.which !== 0 && evt.which < 48 || evt.which > 57) {
+                evt.preventDefault();
+            }
+        });
+        var NTEL = document.querySelector('#celular');
+        NTEL.addEventListener('input', function () {
+            if (this.value.length > 10)
+                this.value = this.value.slice(0, 10);
+        })
+    }
+
+</script>
+
+</html>
